@@ -3,7 +3,15 @@ var gamePattern = [];
 var userClickedPattern = [];
 var started = !1;
 var level = 0;
+
 $(document).keypress(function () {
+  if (!started) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = !0
+  }
+});
+$("#level-title").click(function(){
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
